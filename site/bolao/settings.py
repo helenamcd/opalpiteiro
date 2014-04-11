@@ -82,7 +82,16 @@ AUTH_USER_MODEL = 'usuarios.Usuario'
 USE_TZ = True
 
 
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
-
 STATIC_URL = '/static/'
+
+# Raiz para os arquivos estaticos (imagens do site, js, css, etc)
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+# Raiz para os arquivos de upload
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+# URL para os arquivos de upload
+MEDIA_URL = "/media/"

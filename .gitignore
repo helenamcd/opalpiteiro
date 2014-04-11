@@ -1,3 +1,6 @@
+# Base de dados de teste
+*.db
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

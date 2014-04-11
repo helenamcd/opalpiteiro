@@ -6,8 +6,11 @@ class Equipe(models.Model):
     """
     Representa uma equipe que participará de campeonatos
     """
+    
     nome = models.CharField(max_length=100)
+    sigla = models.CharField(max_length=3, unique=True)
+    emblema = models.ImageField(upload_to="emblemas/")
     
     def __unicode__(self):
         
-        return self.nome
+        return self.sigla
