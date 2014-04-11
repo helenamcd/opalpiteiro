@@ -1,0 +1,45 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<title>O Palpiteiro</title>
+	<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+</head>
+<body>
+	<header id="header">
+		<div class="menuTopBar" align="center">
+		</div>
+	</header>
+	{% block conteudo %}
+	<div id="context">
+        <div id="headerContext">
+            <div id="palpiteRodada">
+                <nav><</nav>
+                <div align="center">
+                    <form>
+                    <img src="">
+                    <input type="text" required>
+                    <span>X</span>
+                    <input type="text" required>
+                    <img src="">
+
+                    </form>
+                </div>
+                <nav>></nav>
+            </div>
+            <div id="minRank">
+                <ul>
+                    <li> 1 - João  20pt </li>
+                    <li> 2 - Pedro 30pt </li>
+                    <li> 3 - Joaquim 40 pt </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+	{%endblock%}
+	<footer id="foter">
+		
+	</footer>
+</body>
+</html>

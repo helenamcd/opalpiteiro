@@ -4,6 +4,7 @@ from django.conf import settings
 
 from django.contrib import admin
 from usuarios.views import CadastroUsuario
+from django.views.generic.base import TemplateView
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -12,7 +13,8 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^cadastro/$', CadastroUsuario.as_view())
+    url(r'^cadastro/$', CadastroUsuario.as_view()),
+    url(r'^$', TemplateView.as_view(template_name="embreve.html")),
 )
 
 # Serve a mídia estática enquanto está em DEBUG

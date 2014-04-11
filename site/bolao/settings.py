@@ -87,8 +87,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 STATIC_URL = '/static/'
 
-# Raiz para os arquivos estaticos (imagens do site, js, css, etc)
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+# Diretórios para os arquivos static
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
 
 # Raiz para os arquivos de upload
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
