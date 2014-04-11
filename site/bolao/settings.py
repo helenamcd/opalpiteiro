@@ -95,3 +95,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # URL para os arquivos de upload
 MEDIA_URL = "/media/"
+
+# Diretórios para os templates
+TEMPLATE_DIRS = ( os.path.join(BASE_DIR, "templates"), )

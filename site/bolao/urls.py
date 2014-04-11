@@ -3,6 +3,7 @@ from django.conf.urls import patterns, include, url
 from django.conf import settings
 
 from django.contrib import admin
+from usuarios.views import CadastroUsuario
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -11,6 +12,7 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^cadastro/$', CadastroUsuario.as_view())
 )
 
 # Serve a mídia estática enquanto está em DEBUG
