@@ -2,6 +2,7 @@ body{
 	padding: 0px !important;
 	margin: 0px !important;
 	background-color: #DFF1E6;
+	background-image: url("/media/bg.jpg");
 }
 li{
 	list-style: none;
@@ -9,12 +10,10 @@ li{
 #header{
 	height: 80px;
 }
-#context{
-	height: 400px;
-}
 #footer{
 	height: 200px;
-	background-color: #00B232;
+	background-color: rgba(255,255,255,0.5);
+	
 }
 #mensagem{
 	background-color: #000;
@@ -23,7 +22,7 @@ li{
 	border: 1px solid #888;
 }
 #palpiteRodada{
-	width: 68.1%;
+	width: 67%;
 	padding: 1%;
 	float: left;
 	border: 1px solid #eee;
@@ -49,6 +48,7 @@ li{
 #minRank>table>tbody>tr>td{
 	border: 1px solid #eee;
 	text-align: center;
+	padding: 15px;
 }
 
 .menuTopBar{
@@ -94,7 +94,7 @@ li{
 }
 #footer>div{
 	line-height: 80px;
-	color: #eee;
+	color: #000;
 
 }
 #pontosTopBar{
@@ -236,17 +236,37 @@ input[type="submit"]:hover{
 	
 	text-align: center;
 	line-height: 150px;
-	width: 36%;
+	width: 35%;
 }
 .errorlist>li{
 	color: #F80B0B;
 	margin-left: 70%;
 }
+#context{
+	
+}
 #headerContext{
 	padding-left: 2%;
 	padding-right: 2%;
 	padding-top: 2%;
+	height: 250px;
 }
 #header{
 	padding-bottom: 1%;
+}
+#footerContext{
+	height: 300px;
+
+}
+#novidades{
+	float: left;
+	width: 45%;
+}
+#estatistica{
+	float: left;
+	width: 45%;
+	margin-left: 2%;
+}
+#estatistica>table{
+	border: 1px solid;
 }
