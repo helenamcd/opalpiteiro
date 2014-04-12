@@ -1,21 +1,26 @@
 body{
 	padding: 0px !important;
 	margin: 0px !important;
+	background-color: #DFF1E6;
 }
 li{
 	list-style: none;
 }
 #header{
-	height: 40px;
+	height: 80px;
 }
 #context{
-	height: 60%;
+	height: 400px;
 }
 #footer{
-	height: 20%;
+	height: 200px;
+	background-color: #00B232;
 }
 #mensagem{
-	background-color: #F74C4C;
+	background-color: #000;
+	color: #eee;
+	padding: 1%;
+	border: 1px solid #888;
 }
 #palpiteRodada{
 	width: 68.1%;
@@ -23,24 +28,59 @@ li{
 	float: left;
 	border: 1px solid #eee;
 	border-radius: 10px;
+	background-color: #fff;
 }
 #palpiteRodada>div>form{
 	margin: 0 auto;
 }
-.menuTopBar{
+#minRank>table{
+	width: 100%;
+	border: 1px solid #eee;
+	border-collapse: collapse;
 	background-color: #fff;
+}
+#minRank>table>thead>tr{
+	background: -webkit-linear-gradient(top,#fff,#eee);
+	background: -o-linear-gradient(top,#fff,#eee);
+	background: -moz-linear-gradient(top,#fff,#eee);
+	background: linear-gradient(top,#fff,#eee);
+	border: 1px solid #eee;
+}
+#minRank>table>tbody>tr>td{
+	border: 1px solid #eee;
+	text-align: center;
+}
+
+.menuTopBar{
+	background-color: rgba(255,255,255,0.8);
 	top: 0px !important;
 	margin: 0px !important;
 	padding: 0px;
-	height: 40px;
+	height: 80px;
 	text-align: center;
-	line-height: 40px;
-	opacity: 0.90;
+	line-height: 80px;
+	
 	width: 100%;
     top: 0;
 	position: fixed;
 
 
+}
+.menuTopBar>form{
+	float: left;
+	margin-left: 70%;
+}
+.menuTopBar>a{
+	float: left;
+	margin-left: 2%;
+	margin-top: 1%;
+	height: 50px;
+
+}
+.menuTopBar>a>img{
+	width: 50px;
+	height: 50px;
+	margin-top: 1%;
 }
 .containerForm{
 	width: 50%;
@@ -52,16 +92,21 @@ li{
 	color: #BBBDB3;
 
 }
+#footer>div{
+	line-height: 80px;
+	color: #eee;
+
+}
 #pontosTopBar{
     background: -webkit-linear-gradient(top,#F37A15,#FD7043);
 	background: -o-linear-gradient(top,#F37A15,#FD7043);
 	background: -moz-linear-gradient(top,#F37A15,#FD7043);
 	background: linear-gradient(top,#F37A15,#FD7043);
-	height: 40px;
-	line-height: 40px;
+	height: 80px;
+	line-height: 80px;
 	text-align: center;
 	font-weight: bold;
-	
+	opacity: 0.90;
     width: 8%;
      top: 0;
      margin-left: 92%;
@@ -76,24 +121,10 @@ li{
 }
 #minRank{
 	float: left;
-	border: 1px solid red;
-	border-radius: 25px 25px 0px 0px;
 	margin-left: 2%;
 	width: 24%;
 }
-#minRank>ul{
 
-	padding: 0px;
-}
-#minRank>ul>li{
-	background-color: red;
-	margin-left: 0px !important;
-	padding: 2%;
-	border-bottom: 1px solid;
-	font-family: arial;
-	text-align: justify;
-
-}
 .shadown{
 	-webkit-box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.05);
 	-moz-box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.05);
@@ -185,17 +216,20 @@ input[type="submit"]:hover{
 	font-size: 18pt;
 }
 #conteudoMensagem{
-
+	width: 90%;
 }
-#palpiteRodada>nav{
+#fecharMensagem{
+	width: 10%;
+	margin-left: 92%;
+	text-align: center
+}
+#palpiteRodada>button{
 	float: left;
 	text-align: center;
-	line-height: 50px;
+	line-height: 80px;
 	font-size: 40pt;
-	border: 1px solid;
-	border-radius: 50%;
 	width: 6%;
-	margin-top: 5%;
+	margin-top: 4%;
 }
 #palpiteRodada>div{
 	float: left;

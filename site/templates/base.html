@@ -9,9 +9,27 @@
 <body>
 	<header id="header">
 		<div class="menuTopBar shadown" align="center">
+            {% if user.is_authenticated %}
+            <form>
+                <label for="campeonato">Campeonatos: </label>
+                <select id="campeonatos" name="campeonato">
+                    <option value="1">aaaa</option>
+                        <option value="2">ssss</option>
+                        <option value="3">ssss</option>
+                        <option value="4">ssss</option>
+                        <option value="5">ssss</option>
+                        <option value="6">ssss</option>
+                        <option value="7">ssss</option>
+                        <option value="8">ssss</option>
+                        <option value="9">ssss</option>
+                        <option value="10">ssss</option>    
+                </select>
+            </form>
+            <a href=""><img src="{{MEDIA_URL}}business_user.png" alt="user"></a>
             <div id="pontosTopBar">
                 20Pts
             </div>
+            {% endif %}
 		</div>
 	</header>
 	
@@ -21,7 +39,8 @@
         {%endblock%}
     </div>
 	
-	<footer id="foter">
+	<footer id="footer">
+        <div align="center"><p>Desenvolvido por:<br>Lazáro Menezes & Paulo Calanca</p></div>
 		
 	</footer>
 </body>
