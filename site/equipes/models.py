@@ -17,4 +17,4 @@ class Equipe(models.Model):
     
     def __unicode__(self):
         
-        return self.sigla
+        return self.nome
