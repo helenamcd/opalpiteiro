@@ -8,6 +8,8 @@ class PalpiteTestCase(TestCase):
     """
     TestCase para os palpites
     """
+
+    fixtures = ['equipes', 'campeonato']
     
     # ACERTOU RESULTADO
         

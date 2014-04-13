@@ -2,6 +2,7 @@
 from django.db import models
 from campeonato.models import Jogo
 from usuarios.models import Usuario
+from datetime import datetime
 
 class Palpite(models.Model):
     """
@@ -12,7 +13,10 @@ class Palpite(models.Model):
     usuario = models.ForeignKey(Usuario)
     golsMandante = models.IntegerField()
     golsVisitante = models.IntegerField()
-    data = models.DateTimeField()
+    data = models.DateTimeField(editable = False, default = datetime.now())
+    
+    def __unicode__(self):
+        return u"{0} {1} x {2} {3}".format(self.jogo.equipeMandante, self.golsMandante, self.golsVisitante, self.jogo.equipeVisitante)
     
     def acertouResultado(self):
         """

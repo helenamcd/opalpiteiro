@@ -73,6 +73,8 @@ class Usuario(AbstractBaseUser):
     # Campos obrigatórios pra criar um usuário
     REQUIRED_FIELDS = ['nome', 'telefone']
     
+    
+    # Métodos requeridos pelo Django
     def get_full_name(self):
         """
         Nome longo, devolve o nome do usuario
@@ -108,3 +110,4 @@ class Usuario(AbstractBaseUser):
         """
         return self.is_admin
     
+    # Métodos de negócio
