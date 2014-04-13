@@ -14,6 +14,7 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^cadastro/$', CadastroUsuario.as_view()),
+    url(r'^cadastro/sucesso/$', TemplateView.as_view(template_name="usuarios/sucesso.html")),
     url(r'^embreve/$', TemplateView.as_view(template_name="embreve.html")),
 	url(r'^$', TemplateView.as_view(template_name="index.html")),
 

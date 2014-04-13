@@ -3,6 +3,7 @@ from django.views.generic.edit import FormView
 
 from usuarios.forms import FormCriarUsuario
 
+
 # Create your views here.
 class CadastroUsuario(FormView):
     """
@@ -10,8 +11,13 @@ class CadastroUsuario(FormView):
     """
     form_class = FormCriarUsuario
     template_name = 'usuarios/cadastro.html'
-    success_url = '/sucesso/'
+    success_url = '/cadastro/sucesso/'
     
     def form_valid(self, form):
         
-        form.save()
+        try:
+            form.save()
+            return super(CadastroUsuario, self).form_valid(form)
+        except:
+            return self.form_invalid(form)
+           
