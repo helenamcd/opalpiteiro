@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'usuarios',
     'equipes',
     'campeonato',
+    'palpites',
 )
 
 MIDDLEWARE_CLASSES = (
