@@ -1,8 +1,8 @@
 body{
 	padding: 0px !important;
 	margin: 0px !important;
-	background-color: #DFF1E6;
-	background-image: url("/media/bg.jpg");
+	background:#E5E5E5;
+	font-family: "Roboto Condensed",Arial,sans-serif;
 }
 li{
 	list-style: none;
@@ -12,7 +12,7 @@ li{
 }
 #footer{
 	height: 200px;
-	background-color: rgba(255,255,255,0.5);
+	background: #b3c033;
 	
 }
 #mensagem{
@@ -23,11 +23,14 @@ li{
 }
 #palpiteRodada{
 	width: 67%;
-	padding: 1%;
 	float: left;
+	
+}
+#containerPalpiteRodada{
 	border: 1px solid #eee;
-	border-radius: 10px;
+	padding: 1%;
 	background-color: #fff;
+	height: 382px;
 }
 #palpiteRodada>div>form{
 	margin: 0 auto;
@@ -38,21 +41,34 @@ li{
 	border-collapse: collapse;
 	background-color: #fff;
 }
-#minRank>table>thead>tr{
-	background: -webkit-linear-gradient(top,#fff,#eee);
-	background: -o-linear-gradient(top,#fff,#eee);
-	background: -moz-linear-gradient(top,#fff,#eee);
-	background: linear-gradient(top,#fff,#eee);
-	border: 1px solid #eee;
-}
 #minRank>table>tbody>tr>td{
-	border: 1px solid #eee;
+	
 	text-align: center;
 	padding: 15px;
 }
-
+#minRank>table>tbody>tr:nth-child(1){
+	height: 89px;
+	background-color: #FFFBC2;
+	font-size: 20pt;
+}
+#minRank>table>tbody>tr:nth-child(2){
+	height: 69px;
+	background-color: #E4E0E0;
+	font-size: 17pt;
+}
+#minRank>table>tbody>tr:nth-child(3){
+	height: 59px;
+	background-color: #FFC8A6;
+	font-size: 14pt;
+}
+#menuOptions{
+	width: 10%;
+	float: left;
+	height: 100%;
+}
 .menuTopBar{
-	background-color: rgba(255,255,255,0.8);
+
+	background-color: rgba(255,255,255,0.95);
 	top: 0px !important;
 	margin: 0px !important;
 	padding: 0px;
@@ -68,7 +84,7 @@ li{
 }
 .menuTopBar>form{
 	float: left;
-	margin-left: 70%;
+	margin-left: 60%;
 }
 .menuTopBar>a{
 	float: left;
@@ -122,7 +138,7 @@ li{
 #minRank{
 	float: left;
 	margin-left: 2%;
-	width: 24%;
+	width: 30%;
 }
 
 .shadown{
@@ -188,31 +204,35 @@ input[type="submit"]:hover{
 50%  {background: linear-gradient(top,#2174FA,#376CFB);}
 100% {background: linear-gradient(top,#1174FA,#576CFB);}
 }
-#palpiteRodada>div>form{
-	width: 60%;
-	height: 60%;
+#containerPalpiteRodada>div>form{
+	height: 10%;
 	float: left;
-	margin-left: 20%;
 }
-#palpiteRodada>div>form>input{
+#containerPalpiteRodada>div>form>input:not([type="submit"]){
 	width: 38%;
 	height: 60px;
 	font-size: 30pt;
 }
-#palpiteRodada>img{
+
+#containerPalpiteRodada>div>form>input[type="submit"]{
+	margin-top: 20px;
+	margin-left: 2%;
+	width: 100px;
+	
+}
+#containerPalpiteRodada>img{
 	float: left;
-	border: 1px solid green;
 	width:200px;
 	height: 100px;
 	margin-top: 3%;
 	margin-left:1%;
 	margin-right: 1%; 
 }
-#palpiteRodada>div{
+#containerPalpiteRodada>div{
 	float: left;
 
 }
-#palpiteRodada>div>form>span{
+#containerPalpiteRodada>div>form>span{
 	font-size: 18pt;
 }
 #conteudoMensagem{
@@ -223,36 +243,98 @@ input[type="submit"]:hover{
 	margin-left: 92%;
 	text-align: center
 }
-#palpiteRodada>button{
+#containerPalpiteRodada>button{
 	float: left;
 	text-align: center;
 	line-height: 80px;
-	font-size: 40pt;
-	width: 6%;
+	font-size: 28pt;
+	width: 8.3%;
 	margin-top: 4%;
 }
-#palpiteRodada>div{
+#estatisticasRapidasTimeA{
+	width: 27% !important;
+	margin-left: 9%;
+	margin-top: -28px !important;
+}
+#estatisticasRapidasTimeB{
+	float: right !important;
+	margin-top: -23px !important;
+	margin-right: 8%;
+}
+#containerPalpiteRodada>div{
 	float: left;
-	
+	margin-top: 4%;
 	text-align: center;
-	line-height: 150px;
-	width: 35%;
+	width: 30%;
+}
+.titulo{
+	font-size: 24pt;
+	
+	font-weight: normal !important;
+	
+	padding: 0px;
+	margin: 0px;
+	color: #000;
 }
 .errorlist>li{
 	color: #F80B0B;
 	margin-left: 70%;
 }
-#context{
-	
+#estatisticasRapidasTimeA>p{
+	width: 60%;
+	font-size: 12pt;
+	font-weight: bold;
+}
+#estatisticasRapidasTimeB>p{
+	width: 90%;
+	font-size: 12pt;
+	font-weight: bold;
+}
+.vitoriaPorcentagem{
+	color: #17C323;
+}
+.empatePorcentagem{
+	color: #FEBF18;
+}
+.derrotaPorcentagem{
+	color: #F80000;
+}
+
+#menuLeftBar{
+	margin-left: -5%;
+	width: 5%;
+	float: left;
+	background-color: rgba(255,255,255,0.95);
+	height: 300px;
+	overflow-y: auto;
+}
+#menuLeftBar>ul{
+	margin-left: 0px;
+	padding: 0px;
+}
+#menuLeftBar>ul>:nth-child(1){
+	background-color: #EEB319;
+	width: 100%;
+}
+#menuLeftBar>ul>:nth-child(2){
+	background-color: #2FA8E4;
+	width: 100%;
+}
+#menuLeftBar>ul>:nth-child(3){
+	background-color: #EE4646;
+	width: 100%;
+}
+#contextCenter{
+	width: 100%;
 }
 #headerContext{
 	padding-left: 2%;
 	padding-right: 2%;
 	padding-top: 2%;
-	height: 250px;
+	height: 350px;
 }
 #header{
-	padding-bottom: 1%;
+	padding-bottom: 0.5%;
 }
 #footerContext{
 	height: 300px;
@@ -269,4 +351,53 @@ input[type="submit"]:hover{
 }
 #estatistica>table{
 	border: 1px solid;
+}
+.transitionLeftToRight {
+  -webkit-animation: leftToRight 0.2s linear normal;
+  -moz-animation: leftToRight 0.2s linear normal;
+  -ms-animation: leftToRight 0.2s linear normal;
+  -o-animation: leftToRight 0.2s linear normal;
+  animation: leftToRight 0.2s linear normal;
+}
+
+@-webkit-keyframes leftToRight {
+	from { margin-left: -10% }
+	to { margin-left: 0% }
+}
+@-o-keyframes leftToRight {
+	from { margin-left: -10% }
+	to { margin-left: 0% }
+}
+@-moz-keyframes leftToRight {
+	from { margin-left: -10% }
+	to { margin-left: 0% }
+}
+@keyframes leftToRight {
+	from { margin-left: -10% }
+	to { margin-left: 0% }
+}
+
+.transitionRightToLeft {
+  -webkit-animation: leftToRight 0.2s linear normal;
+  -moz-animation: leftToRight 0.2s linear normal;
+  -ms-animation: leftToRight 0.2s linear normal;
+  -o-animation: leftToRight 0.2s linear normal;
+  animation: leftToRight 0.2s linear normal;
+}
+
+@-webkit-keyframes transitionRightToLeft {
+	from { margin-left: 0% }
+	to { margin-left: -10% }
+}
+@-o-keyframes transitionRightToLeft {
+	from { margin-left: 0% }
+	to { margin-left: -10% }
+}
+@-moz-keyframes transitionRightToLeft {
+	from { margin-left: 0% }
+	to { margin-left: -10% }
+}
+@keyframes transitionRightToLeft {
+	from { margin-left: 0% }
+	to { margin-left: -10% }
 }

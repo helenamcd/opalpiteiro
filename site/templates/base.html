@@ -5,10 +5,16 @@
 	<meta charset="UTF-8">
 	<title>O Palpiteiro</title>
 	<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300' rel='stylesheet' type='text/css'>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="{% static "js/script.js" %}"></script>
 </head>
 <body>
 	<header id="header">
-		<div class="menuTopBar shadown" align="center">
+		<div class="menuTopBar shadown" >
+            <div id="menuOptions" onclick="">
+                <img src="{% static "img/menu.png" %}">
+            </div>
             {% if user.is_authenticated %}
             <form>
                 <label for="campeonato">Campeonatos: </label>
@@ -32,13 +38,26 @@
             {% endif %}
 		</div>
 	</header>
-	
-	<div id="context">
-        {% block conteudo %}
-        
-        {%endblock%}
-    </div>
-	
+    <div id="context">
+    	<div id="menuLeftBar" class="shadown">
+            <ul>
+                <li>
+                    <nav><img src="" alt=""></nav>
+                </li>
+                <li>
+                    <nav><img src="" alt=""></nav>
+                </li>
+                <li>
+                    <nav><img src="" alt=""></nav>
+                </li>
+            </ul>
+        </div>
+    	<div id="contextCenter">
+            {% block conteudo %}
+            
+            {%endblock%}
+        </div>
+	</div>
 	<footer id="footer">
         <div align="center"><p>Desenvolvido por:<br>Lazáro Menezes & Paulo Calanca</p></div>
 		
