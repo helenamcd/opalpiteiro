@@ -13,7 +13,6 @@ li{
 #footer{
 	height: 200px;
 	background: #b3c033;
-	
 }
 #mensagem{
 	background-color: #000;
@@ -343,8 +342,7 @@ input[type="submit"]:hover{
 }
 #menuLeftBar>ul>li>nav{
 	height: 31px;
-	
-	text-align: center;
+	margin-left: 2px;
 }
 #menuLeftBar>ul>li>nav>a{
 	line-height: 31px;
@@ -354,6 +352,8 @@ input[type="submit"]:hover{
 
 #contextCenter{
 	width: 100%;
+	min-height: 380px;
+
 }
 #headerContext{
 	padding-left: 2%;
@@ -365,20 +365,51 @@ input[type="submit"]:hover{
 	padding-bottom: 0.5%;
 }
 #footerContext{
-	height: 300px;
+	height: 540px;
 
+}
+.view-content{
+	width: 500px;
 }
 #novidades{
 	float: left;
-	width: 45%;
+	width: 25%;
+	margin-left: 4%;
+}
+#novidades>div{
+	background-color: #FFF;
 }
 #estatistica{
 	float: left;
-	width: 45%;
+	width: 65%;
 	margin-left: 2%;
 }
+table>thead>tr>th{
+	background: -webkit-linear-gradient(bottom,#DDD,#FFF);
+	background: -o-linear-gradient(bottom,#DDD,#FFF);
+	background: -moz-linear-gradient(bottom,#DDD,#FFF);
+	background: linear-gradient(bottom,#DDD,#FFF);
+	
+}
 #estatistica>table{
-	border: 1px solid;
+	width: 90%;
+	background-color: #FFF;
+	border-collapse: collapse;
+}
+#estatistica>table>tbody>tr>td{
+	text-align: center;
+	padding: 4%;
+}
+#estatistica>div{
+	background-color: #fff;
+	width: 90%;
+	border-bottom: 1px solid #EEE;
+	text-align: center;
+	font-size: 20pt;
+}
+#estatistica>div>span{
+	margin-left: 39%;
+	margin-right: 39%;
 }
 .transitionLeftToRight {
   -webkit-animation: leftToRight 0.2s linear normal;
@@ -452,4 +483,52 @@ input[type="submit"]:hover{
 @keyframes abrirMenu {
 	from {  width: 40%}
 	to { width: 100% }
+}
+#ranking{
+	width: 90%;
+	-webkit-animation: sliderRankig 1s normal;
+	-o-animation: sliderRankig 1s normal;
+	animation: sliderRankig 1s normal;
+	margin: 0 auto;
+	border-collapse: collapse;
+	background-color: #FFF;
+
+}
+
+#ranking>tbody>tr>td{
+	text-align: center;
+	padding: 1%;
+}
+
+@-webkit-keyframes sliderRankig {
+	from { margin-left: -100% }
+	to { margin-left: 0% }
+}
+@-o-keyframes sliderRankig {
+	from { margin-left: -100% }
+	to { margin-left: 0% }
+}
+@-moz-keyframes sliderRankig {
+	from { margin-left: -100% }
+	to { margin-left: 0% }
+}
+@keyframes sliderRankig {
+	from { margin-left: -100% }
+	to { margin-left: 0% }
+}
+.pagination{
+	height: 10px;
+	width: 90%;
+	margin: 0 auto;
+}
+.pagination>nav{
+	border: 1px solid #DDD;
+	width: 2%;
+	float: left;
+	margin-left: 1%;
+	text-align: center;
+	background-color: #FFF;
+}
+.bandeiraEstatistica{
+	width: 30%;
 }
