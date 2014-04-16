@@ -10,33 +10,25 @@
 
 <div id="headerContext">
            
-            <div id="palpiteRodada">
+            <div id="palpiteRodada" align="center">
                 <h3 class="titulo" >Palpites da rodada</h3>
                 <div class="shadown" id="containerPalpiteRodada" align="center">
                     <p>Rodada X</p>
-                    <button><</button>
-                    <img src="{{MEDIA_URL}}bandeiraBrasil.png">
-                    <div align="center">
+                    <button><</button>                  
+                    <div align="center" id="formPalpiteRodada">
+                        <img src="{{MEDIA_URL}}bandeiraBrasil.png">
                         <form>
                             <input type="text" required>
                             <span>X</span>
                             <input type="text" required>
                             <input type="submit" value="Palpitar">
                         </form>
+                        <img src="{{MEDIA_URL}}alemanha.png">
                     </div>
-                    <img src="{{MEDIA_URL}}alemanha.png">
                     <button>></button><br>
-                    <div id="estatisticasRapidasTimeA">
-                        <p class="vitoriaPorcentagem">Vitoria: 10%</p>
-                        <p class="derrotaPorcentagem">Derrota: 30%</p>
-                        <p class="empatePorcentagem">Empate: 40%</p>
+                    <div id="porcentagem">
+                      <h4>Porcentagem</h4>
                     </div>
-                    <div id="estatisticasRapidasTimeB">
-                        <p class="vitoriaPorcentagem">Vitoria: 10%</p>
-                        <p class="derrotaPorcentagem">Derrota: 30%</p>
-                        <p class="empatePorcentagem">Empate: 40%</p>
-                    </div>
-
                 </div>
                 
             </div>

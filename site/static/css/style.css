@@ -207,6 +207,14 @@ input[type="submit"]:hover{
 #containerPalpiteRodada>div>form{
 	height: 10%;
 	float: left;
+	width: 38%;
+	margin-top: 4%;
+}
+#porcentagem{
+	width: 100% !important;
+	margin: 0 !important;
+	border: 1px solid;
+
 }
 #containerPalpiteRodada>div>form>input:not([type="submit"]){
 	width: 38%;
@@ -220,13 +228,10 @@ input[type="submit"]:hover{
 	width: 100px;
 	
 }
-#containerPalpiteRodada>img{
+#containerPalpiteRodada>div>img{
 	float: left;
-	width:200px;
-	height: 100px;
-	margin-top: 3%;
-	margin-left:1%;
-	margin-right: 1%; 
+	width: 31%;
+	margin-top: 3%; 
 }
 #containerPalpiteRodada>div{
 	float: left;
@@ -248,7 +253,7 @@ input[type="submit"]:hover{
 	text-align: center;
 	line-height: 80px;
 	font-size: 28pt;
-	width: 8.3%;
+	width: 5%;
 	margin-top: 4%;
 }
 #estatisticasRapidasTimeA{
@@ -261,11 +266,16 @@ input[type="submit"]:hover{
 	margin-top: -23px !important;
 	margin-right: 8%;
 }
-#containerPalpiteRodada>div{
+#formPalpiteRodada{
 	float: left;
 	margin-top: 4%;
 	text-align: center;
-	width: 30%;
+	width: 80%;
+	margin: 0 auto;
+	margin-left: 5%;
+	margin-right: 5%;
+
+
 }
 .titulo{
 	font-size: 24pt;
@@ -301,10 +311,9 @@ input[type="submit"]:hover{
 }
 
 #menuLeftBar{
-	margin-left: -5%;
-	width: 5%;
+	margin-left: -8%;
+	width: 8%;
 	float: left;
-	background-color: rgba(255,255,255,0.95);
 	height: 300px;
 	overflow-y: auto;
 }
@@ -314,16 +323,35 @@ input[type="submit"]:hover{
 }
 #menuLeftBar>ul>:nth-child(1){
 	background-color: #EEB319;
-	width: 100%;
+	
+
 }
 #menuLeftBar>ul>:nth-child(2){
 	background-color: #2FA8E4;
-	width: 100%;
+	
 }
 #menuLeftBar>ul>:nth-child(3){
 	background-color: #EE4646;
-	width: 100%;
+	
 }
+#menuLeftBar>ul>li{
+	padding-top: 6%;
+	padding-bottom: 6%;
+	width: 40%;
+	overflow: hidden;
+
+}
+#menuLeftBar>ul>li>nav{
+	height: 31px;
+	
+	text-align: center;
+}
+#menuLeftBar>ul>li>nav>a{
+	line-height: 31px;
+	color: #000;
+	margin-top: -10px;
+}
+
 #contextCenter{
 	width: 100%;
 }
@@ -331,7 +359,7 @@ input[type="submit"]:hover{
 	padding-left: 2%;
 	padding-right: 2%;
 	padding-top: 2%;
-	height: 350px;
+	height: 450px;
 }
 #header{
 	padding-bottom: 0.5%;
@@ -400,4 +428,28 @@ input[type="submit"]:hover{
 @keyframes transitionRightToLeft {
 	from { margin-left: 0% }
 	to { margin-left: -10% }
+}
+
+.barraMenuLeft:hover{
+	-webkit-animation: abrirMenu 0.2s linear normal;
+	-moz-animation: abrirMenu 0.2s linear normal;
+	-ms-animation: abrirMenu 0.2s linear normal;
+	-o-animation: abrirMenu 0.2s linear normal;
+	animation: abrirMenu 0.2s linear normal;
+}
+@-webkit-keyframes abrirMenu {
+	from {  width: 40%}
+	to { width: 100% }
+}
+@-o-keyframes abrirMenu {
+	from {  width: 40%}
+	to { width: 100% }
+}
+@-moz-keyframes abrirMenu {
+	from {  width: 40%}
+	to { width: 100% }
+}
+@keyframes abrirMenu {
+	from {  width: 40%}
+	to { width: 100% }
 }
