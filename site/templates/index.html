@@ -12,22 +12,47 @@
            
             <div id="palpiteRodada" align="center">
                 <h3 class="titulo" >Palpites da rodada</h3>
+                
                 <div class="shadown" id="containerPalpiteRodada" align="center">
-                    <p>Rodada X</p>
-                    <button><</button>                  
-                    <div align="center" id="formPalpiteRodada">
+                    <div class="muda-grupo">
+                      <a> < </a>
+                      <span> Grupo X </span>
+                      <a> > </a>
+                    </div>
+                    <p>Rodada X</p>              
+                    <div align="center" class="formPalpiteRodada">
+                        <div class="imgPalpite">
+                          <p>Brasil</p>
                         <img src="{{MEDIA_URL}}bandeiraBrasil.png">
+                        </div>
                         <form>
+                          <span>Horario: XX:XX</span>
                             <input type="text" required>
                             <span>X</span>
                             <input type="text" required>
                             <input type="submit" value="Palpitar">
                         </form>
+                        <div class="imgPalpite">
+                          <p>Alemanha</p>
                         <img src="{{MEDIA_URL}}alemanha.png">
+                        </div>
                     </div>
-                    <button>></button><br>
-                    <div id="porcentagem">
-                      <h4>Porcentagem</h4>
+                    <div align="center" class="formPalpiteRodada">
+                        <div class="imgPalpite">
+                          <p>Brasil</p>
+                        <img src="{{MEDIA_URL}}bandeiraBrasil.png">
+                        </div>
+                        <form>
+                          <span>Horario: XX:XX</span>
+                            <input type="text" required>
+                            <span>X</span>
+                            <input type="text" required>
+                            <input type="submit" value="Palpitar">
+                        </form>
+                        <div class="imgPalpite">
+                          <p>Alemanha</p>
+                        <img src="{{MEDIA_URL}}alemanha.png">
+                        </div>
                     </div>
                 </div>
                 
@@ -63,6 +88,16 @@
                                <td>JOão</td>
                                <td>10pts</td>
                            </tr>
+                           <tr>
+                               <td>6</td>
+                               <td>JOão</td>
+                               <td>10pts</td>
+                           </tr>
+                           <tr>
+                               <td>7</td>
+                               <td>JOão</td>
+                               <td>10pts</td>
+                           </tr>
                        </tbody>
                    </table>
                
@@ -72,7 +107,7 @@
  <div id="footerContext">
                 <div id="estatistica">
                     <h3 class="titulo" >Estatisticas</h3>
-                    <div class="shadown">
+                    <div class="shadown muda-grupo">
                       <a> < </a>
                       <span> Grupo X </span>
                       <a> > </a>
@@ -87,7 +122,10 @@
                                 <th>V</th>
                                 <th>E</th>
                                 <th>D</th>
+                                <th>GP</th>
+                                <th>GC</th>
                                 <th>SG</th>
+                                <th>%</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -100,11 +138,17 @@
                                 <td>2</td>
                                 <td>3</td>
                                 <td>4</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
                             </tr>
                             <tr>
                                 <td>1</td>
                                 <td><img src="{{MEDIA_URL}}bandeiraBrasil.png" class="bandeiraEstatistica"></td>
                                 <td>Brasil</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>2</td>
                                 <td>3</td>
                                 <td>4</td>
                                 <td>2</td>
@@ -120,11 +164,17 @@
                                 <td>2</td>
                                 <td>3</td>
                                 <td>4</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
                             </tr>
                             <tr>
                                 <td>1</td>
                                 <td><img src="{{MEDIA_URL}}bandeiraBrasil.png" class="bandeiraEstatistica"></td>
                                 <td>Brasil</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>2</td>
                                 <td>3</td>
                                 <td>4</td>
                                 <td>2</td>
@@ -134,11 +184,11 @@
                         </tbody>
                     </table>
                 </div>
-                <div id="novidades">
+                <!--<div id="novidades">
                   <h3 class="titulo" >Novidades da Copa</h3>
                   <div class="shadown">
-                      <script text="text/javascript">widget_largura="100%";widget_altura="467px";url="http://www.copa2014.gov.br/pt-br/widgets_noticias_all";</script><script text="text/javascript" src="http://www.copa2014.gov.br/sites/all/themes/copa_v2/js/widget_portaldacopa.js"></script>
+                      
                    </div>
-                </div>
+                </div>-->
 </div>
 {% endblock %}

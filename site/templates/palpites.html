@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block tituloPagina %}
+    Palpites          
+  {%endblock%}
+{% block conteudo %}
+  <br>
+  <h3 class="titulo" >Grupo X</h3>
+  <div class="containerPalpites shadown">
+                    <div class="muda-grupo">
+                      <a> < </a>
+                      <span> Rodada X </span>
+                      <a> > </a>
+                    </div>
+                    <div align="center" class="formPalpiteRodada">
+                        <div class="imgPalpite">
+                          <p>Brasil</p>
+                        <img src="{{MEDIA_URL}}bandeiraBrasil.png">
+                        </div>
+                        <form>
+                          <span>Horario: XX:XX</span>
+                            <input type="text" required>
+                            <span>X</span>
+                            <input type="text" required>
+                            <input type="submit" value="Palpitar">
+                        </form>
+                        <div class="imgPalpite">
+                          <p>Alemanha</p>
+                        <img src="{{MEDIA_URL}}alemanha.png">
+                        </div>
+                    </div>
+
+                   <div align="center" class="formPalpiteRodada">
+                        <div class="imgPalpite">
+                          <p>Brasil</p>
+                        <img src="{{MEDIA_URL}}bandeiraBrasil.png">
+                        </div>
+                        <form>
+                          <span>Horario: XX:XX</span>
+                            <input type="text" required>
+                            <span>X</span>
+                            <input type="text" required>
+                            <input type="submit" value="Palpitar">
+                        </form>
+                        <div class="imgPalpite">
+                          <p>Alemanha</p>
+                        <img src="{{MEDIA_URL}}alemanha.png">
+                        </div>
+                    </div>
+
+  </div>
+
+  <br><br>
+{% endblock %}

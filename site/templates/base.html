@@ -12,14 +12,17 @@
 <body>
 	<header id="header">
 		<div class="menuTopBar shadown" >
-            <div id="menuOptions" onclick="">
-                <img src="{% static "img/menu.png" %}">
+            <div id="menuOptions">
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
             {% if user.is_authenticated %}
             <form>
-                <label for="campeonato">Campeonatos: </label>
+               
                 <select id="campeonatos" name="campeonato">
-                    <option value="1">aaaa</option>
+                        <option value="-1">Campeonatos</option>
+                        <option value="1">aaaa</option>
                         <option value="2">ssss</option>
                         <option value="3">ssss</option>
                         <option value="4">ssss</option>
@@ -31,15 +34,31 @@
                         <option value="10">ssss</option>    
                 </select>
             </form>
-            <a href=""><img src="{{MEDIA_URL}}business_user.png" alt="user"></a>
+            
             <div id="pontosTopBar">
                 20Pts
             </div>
             {% endif %}
 		</div>
+
+        <div id="menuContext" class="shadown">
+            <div class="seta-cima">&nbsp;</div>
+            <ul>
+                <li>Home</li>
+                <li><a href="/ranking">Ranking</a></li>
+                <li>Palpites</li>
+            </ul>
+            
+        </div>
 	</header>
+    <div class="tituloPagina shadown">
+        {% block tituloPagina %}
+            
+        {%endblock%}
+        </div>
     <div id="context">
-    	<div id="menuLeftBar">
+        
+    	<!--<div id="menuLeftBar">
             <ul>
                 <li class="barraMenuLeft">
                     <nav >
@@ -62,14 +81,14 @@
                     </nav>
                 </li class="barraMenuLeft">
             </ul>
-        </div>
+        </div>-->
     	<div id="contextCenter">
             {% block conteudo %}
             
             {%endblock%}
         </div>
 	</div>
-	<footer id="footer">
+	<footer id="footer" class="shadown">
         <div align="center"><p>Desenvolvido por:<br>Lazáro Menezes & Paulo Calanca</p></div>
 		
 	</footer>
