@@ -32,12 +32,27 @@ li{
 #menuContext{
 	display: none;
 	z-index: 999999;
-	width: 20%;
+	width: 90%;
+	margin-left: 5%;
 	position: fixed;
-	background-color: #fff;
-	margin-left: 3%;
-	margin-top: 4.5%;
+	background-color: rgba(150,150,150,0.8);
 	border-radius: 4px;
+	height: 10%;
+}
+#menuContext>ul{
+	height: 100%;
+	width: 30%;
+	padding: 0px !important;
+	margin: 0 auto !important;
+
+}
+#menuContext>ul>li{
+	float: left;
+	width: 25%;
+	height: 100%;
+	line-height: 100%;
+	padding-top: 8%;
+	text-align: center;
 }
 .seta-cima {
 	width: 0;
@@ -111,7 +126,7 @@ li{
 	width: 10%;
 	float: left;
 	height: 100%;
-	margin-top: 20px;
+	margin-top: 1.4%;
 	line-height: 100%;
 
 }
@@ -125,6 +140,7 @@ li{
 	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
 	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
 }
+
 .menuTopBar{
 
 	background-color: #ffcd1a;
@@ -610,7 +626,7 @@ table>thead>tr>th{
 
 @media (max-width:800px) {
 	#menuOptions{
-				width: 30%;
+		width: 30%;
 
 	}
 	.menuTopBar>form{
@@ -632,6 +648,9 @@ table>thead>tr>th{
 	}
 	#palpiteRodada{
 		float: none;
+	}
+	#menuContext{
+		width: 100%;
 	}
 	.muda-grupo>span {
 		margin-left: 20%;
@@ -660,6 +679,9 @@ table>thead>tr>th{
 	#containerPalpiteRodada{
 		height: 95%;
 	}
+	.containerPalpites {
+		height: 450px;
+	}
 	.formPalpiteRodada {
 		height: 36%;
 
@@ -682,12 +704,23 @@ table>thead>tr>th{
 	 float: none;
 	 margin: 0 auto;
 	}
+	.muda-grupo{
+		font-size: 18pt;
+	}
 }
 @media (max-width:530px) {
 			#menuContext{
 				width: 90%;
 			}
 }
-		 @media (max-width:480px) {
-
-		 }
+@media (max-width:480px) {
+			.formPalpiteRodada{
+				width: 95%;
+			}
+			.formPalpiteRodada>form>span {
+				font-size: 13pt;
+			}
+			#minRank>table>tbody>tr>td{
+				padding: 10px;
+			}
+}

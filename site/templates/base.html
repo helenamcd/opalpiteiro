@@ -9,7 +9,7 @@
 	<title>O Palpiteiro</title>
 	<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300' rel='stylesheet' type='text/css'>
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
     <script type="text/javascript" src="{% static "js/script.js" %}"></script>
     {% block style %}
             
@@ -48,15 +48,7 @@
             {% endif %}
 		</div>
 
-        <div id="menuContext" class="shadown">
-            <div class="seta-cima">&nbsp;</div>
-            <ul>
-                <li>Home</li>
-                <li><a href="/ranking">Ranking</a></li>
-                <li>Palpites</li>
-            </ul>
-            
-        </div>
+        
 	</header>
     <div class="tituloPagina shadown">
         {% block tituloPagina %}
@@ -89,6 +81,16 @@
                 </li class="barraMenuLeft">
             </ul>
         </div>-->
+        <div id="menuContext" class="shadown">
+            
+            <ul>
+                <li>Home</li>
+                <li><a href="/ranking">Ranking</a></li>
+                <li>Palpites</li>
+                <li>X</li>
+            </ul>
+            
+        </div>
     	<div id="contextCenter">
             {% block conteudo %}
             

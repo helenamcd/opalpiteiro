@@ -1,13 +1,13 @@
 $(function(){
 	var verificaMenu=false;
-	$("#menuOptions").hover(function() {
+	$("#menuOptions").click(function() {
 		$("#menuContext").css('display', 'block');
-	}, function() {
-		$("#menuContext").css('display', 'none');
 	});
-	$("#menuContext").hover(function() {
-		$("#menuContext").css('display', 'block');
-	}, function() {
-		$("#menuContext").css('display', 'none');
-	});
+	
 });
+
+function redimensionaPalpites(){
+	var tamanhoAtual = $("#context").height()+$(".containerPalpites").height();
+	$("#context").css("height",tamanhoAtual.toString());
+	alert("teste:"+tamanhoAtual);
+}
