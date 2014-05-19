@@ -9,11 +9,14 @@ class Palpite(models.Model):
     Representa um palpite pra um jogo
     """
     
-    jogo = models.ForeignKey(Jogo)
+    jogo = models.ForeignKey(Jogo, related_name="palpites")
     usuario = models.ForeignKey(Usuario)
     golsMandante = models.IntegerField()
     golsVisitante = models.IntegerField()
     data = models.DateTimeField(editable = False, default = datetime.now())
+    # Depois de realizado o jogo, os pontos serão armazenados aqui para não
+    # precisarem ser calculados novamente
+    pontos = models.IntegerField(editable = False)
     
     def __unicode__(self):
         return u"{0} {1} x {2} {3}".format(self.jogo.equipeMandante, self.golsMandante, self.golsVisitante, self.jogo.equipeVisitante)
@@ -56,22 +59,31 @@ class Palpite(models.Model):
         
         if self.jogo.realizado :
             
-            total_pontos = 0;
+            pontosGanhos = 0;
         
             if self.acertouResultado():
-                total_pontos += 5
+                pontosGanhos += 5
             if self.acertouGolsMandante():
-                total_pontos += 2
+                pontosGanhos += 2
             if self.acertouGolsVisitante():
-                total_pontos += 2
+                pontosGanhos += 2
                 
             # Se acertou tudo, ganha um ponto de bonus        
-            if total_pontos == 9:
-                total_pontos += 1
+            if pontosGanhos == 9:
+                pontosGanhos += 1
                 
-            return total_pontos
+            return pontosGanhos
         
         return None
+    
+    def atualizarPontos(self):
+        """
+        Atualiza os pontos deste palpite
+        """
+        pontosGanhos = self.calcularPontos()
+        if pontosGanhos is not None:
+            self.pontos = pontosGanhos
+            self.save()
                 
     class Meta:
         verbose_name = "Palpite"
