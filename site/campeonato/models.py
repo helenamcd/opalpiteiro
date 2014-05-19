@@ -1,6 +1,9 @@
 #coding:utf-8
 from django.db import models
+
 from equipes.models import Equipe
+from django.db.models.signals import post_save
+
 
 class Campeonato(models.Model):
     """
@@ -49,7 +52,7 @@ class Grupo(models.Model):
     
     def __unicode__(self):
         return self.nome
-    
+        
 class Rodada(models.Model):
     """
     Representa uma rodada que ocorre em um grupo
@@ -64,7 +67,7 @@ class Rodada(models.Model):
     
     def __unicode__(self):
         return self.nome
-    
+        
 class Jogo(models.Model):
     """ 
     Classe que representa uma partida entre duas equipes. Esta partida deve ocorrer em uma rodada
@@ -75,7 +78,7 @@ class Jogo(models.Model):
         verbose_name_plural = "Jogos"
     
     identificacao = models.CharField(max_length=30)
-    rodada = models.ForeignKey(Rodada)
+    rodada = models.ForeignKey(Rodada, related_name='jogos')
     equipeMandante = models.ForeignKey(Equipe, related_name="mandantes")
     equipeVisitante = models.ForeignKey(Equipe, related_name="visitantes")
     golsMandante = models.IntegerField(default = 0)
@@ -91,6 +94,20 @@ class Jogo(models.Model):
     def __unicode__(self):
         return u"{0} - {1} {2} x {3} {4}".format(self.identificacao, self.equipeMandante, self.golsMandante, self.golsVisitante, self.equipeVisitante)
     
+    
+def atualizarPalpites(sender, **kwargs):
+    """
+    Sinal 'post_save' para atualizar os pontos de cada palpite
+    """
+    jogo = kwargs.get('instance')
+    if jogo.realizado :
+        for palpite in jogo.palpites.all():
+            palpite.atualizarPontos()
+
+post_save.connect(atualizarPalpites, Jogo)
+
+#--------------------------------------------------------------
+
 class TabelaGrupo(models.Model):
     """
     Representa a tabela de classificação de um grupo. Apesar de alguns campos aqui serem resultados de cálculos,
@@ -112,7 +129,7 @@ class TabelaGrupo(models.Model):
     derrotas = models.IntegerField(default = 0)
     empates = models.IntegerField(default = 0)
     totalAmarelos = models.IntegerField(default = 0)
-    totalVermelhos = models.IntegerField(default = 0)
-    
+    totalVermelhos = models.IntegerField(default = 0)    
+            
     def __unicode__(self):
         return self.equipe
