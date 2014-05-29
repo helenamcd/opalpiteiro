@@ -68,6 +68,21 @@ class Rodada(models.Model):
     def __unicode__(self):
         return self.nome
         
+class Siglas(object):
+    
+    PONTOS="P"
+    GOLS_PRO="GP"
+    GOLS_CONTRA="GC"
+    SALDO_GOLS="SG"
+    VITORIAS="V"
+    EMPATES="E"
+    DERROTAS="D"
+    AMARELOS="A"
+    VERMELHOS="V"
+    
+class Resultado(object):
+    pass
+        
 class Jogo(models.Model):
     """ 
     Classe que representa uma partida entre duas equipes. Esta partida deve ocorrer em uma rodada
@@ -91,6 +106,28 @@ class Jogo(models.Model):
     local = models.CharField(max_length=100, blank = True, null = True)
     realizado = models.BooleanField("Jogo realizado", default = False)
     
+    def obterResultadoMandante(self):
+        """
+        Retorna um dicionario com os resultados da equipe mandante
+        """
+        resultado = {}
+        
+        if self.golsMandante > self.golsVisitante:
+            resultado[Siglas.PONTOS] = 3            
+        elif self.golsMandante == self.golsVisitante:
+            resultado.pontos = 1
+        else:
+            resultado.pontos = 0
+                
+        resultado.golsPro = self.golsMandante
+        resultado.golsContra = self.golsVisitante
+        resultado.saldo = resultado.golsPro - resultado.golsContra
+        resultado.amarelos = self.amarelosMandante
+        resultado.vermelhos = self.vermelhosMandante
+
+            
+        return resultado
+    
     def __unicode__(self):
         return u"{0} - {1} {2} x {3} {4}".format(self.identificacao, self.equipeMandante, self.golsMandante, self.golsVisitante, self.equipeVisitante)
     
@@ -106,6 +143,21 @@ def atualizarPalpites(sender, **kwargs):
 
 post_save.connect(atualizarPalpites, Jogo)
 
+def atualizarTabela(sender, **kwargs):
+    """
+    Atualiza a entrada na tabela deste grupo
+    """
+    jogo = kwargs.get('instance')
+    if jogo.realizado :
+        mandante = jogo.equipeMandante
+        visitante = jogo.equipeVisitante
+        
+        grupo = jogo.rodada.grupo
+        
+        tabelaMandante = TabelaGrupo.objects.get(equipe = mandante, grupo = grupo)
+        
+        tabelaMandante.atualizarEntrada(jogo.obterResultadoMandante())
+                
 #--------------------------------------------------------------
 
 class TabelaGrupo(models.Model):
@@ -129,7 +181,11 @@ class TabelaGrupo(models.Model):
     derrotas = models.IntegerField(default = 0)
     empates = models.IntegerField(default = 0)
     totalAmarelos = models.IntegerField(default = 0)
-    totalVermelhos = models.IntegerField(default = 0)    
-            
+    totalVermelhos = models.IntegerField(default = 0)
+    
+    def atualizarEntrada(self, resultado):
+        self.pontos = resultado.pontos
+        
+    
     def __unicode__(self):
         return self.equipe
